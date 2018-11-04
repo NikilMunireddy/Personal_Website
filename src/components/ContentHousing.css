@@ -1,0 +1,18 @@
+.content_bg{
+    background-color: whitesmoke;
+}
+.text_Color{
+    color: gray;
+}
+.github{
+    background-color: whitesmoke;
+}
+
+.grey_text{
+    color: gray;
+    text-emphasis-color: gray;
+}
+.header{
+    position: fixed;
+    width: 100%;
+}

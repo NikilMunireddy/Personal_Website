@@ -1,0 +1,83 @@
+[debug] [2018-11-04T10:36:04.796Z] ----------------------------------------------------------------------
+[debug] [2018-11-04T10:36:04.797Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-11-04T10:36:04.798Z] CLI Version:   4.2.1
+[debug] [2018-11-04T10:36:04.798Z] Platform:      linux
+[debug] [2018-11-04T10:36:04.798Z] Node Version:  v8.10.0
+[debug] [2018-11-04T10:36:04.798Z] Time:          Sun Nov 04 2018 16:06:04 GMT+0530 (IST)
+[debug] [2018-11-04T10:36:04.798Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-04T10:36:04.804Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-04T10:36:04.805Z] > authorizing via signed-in user
+[debug] [2018-11-04T10:36:04.806Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-04T10:36:04.806Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-11-04T10:36:05.030Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-04T10:36:05.043Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nikil-m  
+ 
+[debug] [2018-11-04T10:36:21.298Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'nikil-m'...
+[info] 
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-11-04T10:36:21.309Z] >>> HTTP REQUEST PUT https://nikil-m.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+
+[debug] [2018-11-04T10:36:22.615Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules syntax for database nikil-m is valid
+[debug] [2018-11-04T10:36:22.620Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/nikil-m/versions  
+
+[debug] [2018-11-04T10:36:25.174Z] <<< HTTP RESPONSE 200
+[info] i  hosting[nikil-m]: beginning deploy...
+[info] i  hosting[nikil-m]: found 17 files in deploy
+[debug] [2018-11-04T10:36:25.190Z] [hosting] hash cache [ZGVwbG95] not populated
+[debug] [2018-11-04T10:36:25.295Z] [hosting] hash cache [ZGVwbG95] stored for 17 files
+[debug] [2018-11-04T10:36:25.295Z] [hosting][hash queue][FINAL]
+[debug] [2018-11-04T10:36:25.295Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/nikil-m/versions/221702ada4a6abae:populateFiles  
+ <request body omitted>
+[debug] [2018-11-04T10:36:27.122Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-04T10:36:27.137Z] [hosting][populate queue][FINAL]
+[debug] [2018-11-04T10:36:27.138Z] [hosting] uploads queued: 17
+[debug] [2018-11-04T10:36:31.119Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[nikil-m]: file upload complete
+[debug] [2018-11-04T10:36:31.121Z] [hosting] deploy completed after 5944ms
+[info] i  database: releasing rules...
+[debug] [2018-11-04T10:36:31.250Z] >>> HTTP REQUEST PUT https://nikil-m.firebaseio.com/.settings/rules.json  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+
+[debug] [2018-11-04T10:36:32.247Z] <<< HTTP RESPONSE 200
+[info] ✔  database: rules for database nikil-m released successfully
+[debug] [2018-11-04T10:36:32.248Z] [
+  {
+    "config": {
+      "public": "deploy",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "nikil-m"
+    },
+    "site": "nikil-m",
+    "version": "sites/nikil-m/versions/221702ada4a6abae"
+  }
+]
+[info] i  hosting[nikil-m]: finalizing version...
+[debug] [2018-11-04T10:36:32.249Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/nikil-m/versions/221702ada4a6abae?updateMask=status  
+
